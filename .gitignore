@@ -4,4 +4,8 @@ db.sqlite3
 .env
 venv/
 staticfiles/
-.DS_Store 
+.DS_Store
+LogFiles/
+deployments/
+azure_logs.zip
+app.zip 

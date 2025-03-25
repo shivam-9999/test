@@ -1,0 +1,16 @@
+# Create and activate virtual environment
+python -m venv antenv
+source antenv/bin/activate
+
+# Upgrade pip and install requirements
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# Collect static files
+python manage.py collectstatic --noinput
+
+# Apply database migrations
+python manage.py migrate --noinput
+
+# Start Gunicorn
+gunicorn demoproject.wsgi:application --bind=0.0.0.0:8000 
